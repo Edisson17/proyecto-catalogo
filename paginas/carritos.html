@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>TechLaptop Store</h1>
+    <p>Selecciona tu próxima potencia portátil</p>
+</header>
+
+<div class="container">
+    <section class="products-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=300" alt="MacBook">
+            <h3>MacBook Pro M3</h3>
+            <p class="price">$1299</p>
+            <button class="btn-add" onclick="addToCart('MacBook Pro M3', 1299)">Añadir al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=300" alt="Dell">
+            <h3>Dell XPS 15</h3>
+            <p class="price">$1050</p>
+            <button class="btn-add" onclick="addToCart('Dell XPS 15', 1050)">Añadir al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=300" alt="HP">
+            <h3>HP Spectre x360</h3>
+            <p class="price">$950</p>
+            <button class="btn-add" onclick="addToCart('HP Spectre x360', 950)">Añadir al carrito</button>
+        </div>
+    </section>
+
+    <aside class="cart-container">
+        <h2>Tu Carrito 🛒</h2>
+        <div id="cart-items">
+            <p class="empty-msg">El carrito está vacío.</p>
+        </div>
+        <div class="total-section">
+            Total: $<span id="cart-total">0</span>
+        </div>
+        <button class="btn-checkout" onclick="checkout()">Finalizar Compra</button>
+    </aside>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+:root {
+    --primary: #2563eb;
+    --success: #10b981;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--light);
+    margin: 0;
+    padding: 20px;
+    color: var(--dark);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Tarjetas de Producto */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 160px;
+    object-fit: contain;
+}
+
+.price {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+/* Estilos del Carrito */
+.cart-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.empty-msg {
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* Botones */
+.btn-add, .btn-checkout {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.btn-add { background: var(--primary); color: white; }
+.btn-checkout { background: var(--success); color: white; margin-top: 1.5rem; }
+.btn-add:hover, .btn-checkout:hover { opacity: 0.9; }
+
+@media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+}
