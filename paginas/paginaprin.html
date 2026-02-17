@@ -3,59 +3,61 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Página con pestañas</title>
-<link rel="stylesheet" href="../css/prinestilo.css" />
+  <title>Página con pestañas</title>
+  <link rel="stylesheet" href="../css/prinestilo.css" />
+  <script src="../js/script.js" defer></script>
+  
 </head>
 <body>
 
-<h1>Ejemplo de Páginas con Pestañas</h1>
+  <h1>Ejemplo de Páginas con Pestañas</h1>
 
-<div class="tabs">
-  <div class="tab active" data-tab="1">pestaña1</div>
-  <div class="tab" data-tab="2">Pestaña 2</div>
-  <div class="tab" data-tab="3">Pestaña 3</div>
-</div>
+  <div class="tabs">
+      <div class="tab active" data-tab="1">pestaña1</div>
+      <div class="tab" data-tab="2">Pestaña 2</div>
+      <div class="tab" data-tab="3">Pestaña 3</div>
+  </div>
 
-<div id="contenido-1" class="tab-content active">
-  <h2>Contenido de la Pestaña 1</h2>
-  <p>Este es el contenido de la primera pestaña.</p>
-</div>
-<div id="contenido-2" class="tab-content">
-  <h2>Contenido de la Pestaña 2</h2>
-  <p>Este es el contenido de la segunda pestaña.</p>
-  <div id="header"></div>
+  <div id="contenido-1" class="tab-content active">
+      <h2>Contenido de la Pestaña 1</h2>
+      <p>Este es el contenido de la primera pestaña.</p>
+  </div>
+  <div id="contenido-2" class="tab-content">
+      <h2>Contenido de la Pestaña 2</h2>
+      <p>Este es el contenido de la segunda pestaña.</p>
+      <div id="header"></div>
 
-<script>
-fetch("parte1prin.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
-</script>
-</div>
-<div id="contenido-3" class="tab-content">
-  <h2>Contenido de la Pestaña 3</h2>
-  <p>Este es el contenido de la tercera pestaña.</p>
-</div>
+      <script>
+      fetch("parte1prin.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header").innerHTML = data;
+        });
+      </script>
+  </div>
+  <div id="contenido-3" class="tab-content">
+      <h2>Contenido de la Pestaña 3</h2>
+      <p>Este es el contenido de la tercera pestaña.</p>
+  </div>
 
-<script>
-  // Código JavaScript para cambiar de pestañas
-  const tabs = document.querySelectorAll('.tab');
+  <script>
+    // Código JavaScript para cambiar de pestañas yo hago lo que quqireor aca nadie me quehacer que chcuah ava  apsar sin estructura ni anda yo hago lo que quiero obviamente
+    const tabs = document.querySelectorAll('.tab');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
 
-      document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+
+        const tabNumber = tab.getAttribute('data-tab');
+        document.getElementById('contenido-' + tabNumber).classList.add('active');
       });
-
-      const tabNumber = tab.getAttribute('data-tab');
-      document.getElementById('contenido-' + tabNumber).classList.add('active');
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
